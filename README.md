@@ -52,7 +52,7 @@ module.exports = defineConfig({
     tsEslint.configs.strictTypeChecked,
     tsEslint.configs.stylisticTypeChecked,
     angularEslintZoneless.configs.recommended, // ⬅️ add this
-    angularEslintZoneless.configs.all, // ⬅️ or this (see the differences below)
+    angularEslintZoneless.configs.strict, // ⬅️ or this (see the differences below)
   ],
   rules: {},
 });
@@ -65,7 +65,7 @@ module.exports = defineConfig({
 
 ## Rules
 
-| Rule & documentation | in recommended | in all |
+| Rule & documentation | in recommended | in strict |
 |---|---|---|
 | [no-zonejs-import](./docs/rules/NO_ZONEJS_IMPORT.md) | ✅ | ✅ |
 | [no-providezonechangedetection](./docs/rules/NO_PROVIDEZONECHANGEDETECTION.md) | ✅ | ✅ |

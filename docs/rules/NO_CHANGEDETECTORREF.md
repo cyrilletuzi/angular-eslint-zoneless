@@ -10,7 +10,7 @@ With signals, acting explicitly on the change detection is generally not necessa
 
 ## Configuration
 
-- in the `all` preset (see the [README](../../README.md) for the configuration)
+- in the `strict` preset (see the [README](../../README.md) for the configuration)
 - or just this rule:
 ```json
 {

@@ -30,8 +30,8 @@ const plugin = {
     get recommended() {
       return recommended;
     },
-    get all() {
-      return all;
+    get strict() {
+      return strict;
     }
   },
   meta: { name, version },
@@ -87,7 +87,7 @@ const recommended: ConfigObject = {
   },
 };
 
-const all: ConfigObject = {
+const strict: ConfigObject = {
   plugins: {
     [name]: plugin
   },

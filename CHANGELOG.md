@@ -8,7 +8,7 @@
 ## 1.2.0 (2026-05-10)
 
 - feat: add `no-changedetectorref` rule
-- feat: add `all` preset
+- feat: add `strict` preset
 
 ## 1.1.0 (2026-05-10)
 

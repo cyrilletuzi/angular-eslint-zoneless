@@ -11,7 +11,7 @@ An observable inside a component constructor can generally be managed with `toSi
 
 ## Configuration
 
-- in the `all` preset (see the [README](../../README.md) for the configuration)
+- in the `strict` preset (see the [README](../../README.md) for the configuration)
 - or just this rule:
 ```json
 {
