@@ -13,7 +13,6 @@ assignees: ''
 - [ ] I have read _all_ the library's documentation:
   - [README](https://github.com/cyrilletuzi/angular-eslint-zoneless/blob/main/README.md)
   - [rules documentation](https://github.com/cyrilletuzi/angular-eslint-zoneless/tree/main/docs/rules)
-  - [known limitations documentation](https://github.com/cyrilletuzi/angular-eslint-zoneless/tree/main/docs/known-limitations)
   - [CHANGELOG](https://github.com/cyrilletuzi/angular-eslint-zoneless/blob/main/CHANGELOG.md)
 - [ ] I have checked in already:
   - [opened issues](https://github.com/cyrilletuzi/angular-eslint-zoneless/issues)
