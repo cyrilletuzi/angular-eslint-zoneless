@@ -10,13 +10,21 @@ With signals, acting explicitly on the change detection is generally not necessa
 
 ## Configuration
 
-This rule is not in the recommended preset, as there are still valid use cases for `ChangeDetectorRef`. So it must be enabled individually:
+- in the `all` preset (see the [README](../../README.md) for the configuration)
+- or just this rule:
 ```json
 {
   "rules": {
     "angular-eslint-zoneless/no-changedetectorref": "error"
   }
 }
+```
+
+> [!NOTE]
+> This rule is not in the recommended preset, as there are still valid use cases for `ChangeDetectorRef`. But they are rare and low-level, so most applications should enable this rule, and allow exceptions with:
+
+```typescript
+// eslint-disable-next-line angular-eslint-zoneless/no-changedetectorref
 ```
 
 ## ❌ Invalid

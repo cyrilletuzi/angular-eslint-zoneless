@@ -29,6 +29,9 @@ const plugin = {
   configs: {
     get recommended() {
       return recommended;
+    },
+    get all() {
+      return all;
     }
   },
   meta: { name, version },
@@ -81,6 +84,17 @@ const recommended: ConfigObject = {
     [`${name}/${noNgzoneTesting.ruleName}`]: "error",
     [`${name}/${noDetectchangesTesting.ruleName}`]: "error",
     [`${name}/${noZonejsTestingFunctions.ruleName}`]: "error",
+  },
+};
+
+const all: ConfigObject = {
+  plugins: {
+    [name]: plugin
+  },
+  rules: {
+    ...recommended.rules,
+    [`${name}/${noChangedetectorref.ruleName}`]: "error",
+    [`${name}/${noSubscribeInComponentConstructor.ruleName}`]: "error",
   },
 };
 

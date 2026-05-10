@@ -1,4 +1,4 @@
-# no-ngoninit
+# no-subscribe-in-component-constructor
 
 Restrict the usage of `.subscribe()` in components constructors.
 
@@ -11,14 +11,21 @@ An observable inside a component constructor can generally be managed with `toSi
 
 ## Configuration
 
-This rule is not in the recommended preset yet, as it is still battle-tested to be sure it is applicable to most cases. So for now it must be enabled individually:
-
+- in the `all` preset (see the [README](../../README.md) for the configuration)
+- or just this rule:
 ```json
 {
   "rules": {
     "angular-eslint-zoneless/no-subscribe-in-component-constructor": "error"
   }
 }
+```
+
+> [!NOTE]
+> This rule is not in the recommended preset yet, as it is still battle-tested to be sure it is applicable to most cases. New applications should probably enable it; existing ones may enable it and allow exceptions with:
+
+```typescript
+// eslint-disable-next-line angular-eslint-zoneless/no-subscribe-in-component-constructor
 ```
 
 ## ❌ Invalid
