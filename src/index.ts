@@ -1,5 +1,6 @@
 import type { ConfigObject, Plugin } from "@eslint/core";
 import * as noContentDecorator from "./rules/no-content-decorator.js";
+import * as noEagerChangeDetection from "./rules/no-eager-change-detection.js";
 import * as noInputDecorator from "./rules/no-input-decorator.js";
 import * as noNgaftercontentchecked from "./rules/no-ngaftercontentchecked.js";
 import * as noNgaftercontentinit from "./rules/no-ngaftercontentinit.js";
@@ -31,6 +32,7 @@ const plugin = {
   rules: {
     [noZonejsImport.ruleName]: noZonejsImport.ruleDefinition,
     [noProvidezonechangedetection.ruleName]: noProvidezonechangedetection.ruleDefinition,
+    [noEagerChangeDetection.ruleName]: noEagerChangeDetection.ruleDefinition,
     [noNgoninit.ruleName]: noNgoninit.ruleDefinition,
     [noNgdocheck.ruleName]: noNgdocheck.ruleDefinition,
     [noNgonchanges.ruleName]: noNgonchanges.ruleDefinition,
@@ -56,6 +58,7 @@ const recommended: ConfigObject = {
   rules: {
     [`${name}/${noZonejsImport.ruleName}`]: "error",
     [`${name}/${noProvidezonechangedetection.ruleName}`]: "error",
+    [`${name}/${noEagerChangeDetection.ruleName}`]: "error",
     [`${name}/${noNgoninit.ruleName}`]: "error",
     [`${name}/${noNgdocheck.ruleName}`]: "error",
     [`${name}/${noNgonchanges.ruleName}`]: "error",

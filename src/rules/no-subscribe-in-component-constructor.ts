@@ -12,7 +12,7 @@ export const ruleDefinition: RuleDefinition = {
       [messageId]: `An observable inside a component constructor can generally be managed with \`toSignal()\` or \`rxResource()\` instead.`,
     },
     docs: {
-      description: `Checks that observables are not explicitely subscribed in components constructors.`,
+      description: `Checks that observables are not explicitly subscribed in components constructors.`,
       url: 'https://github.com/cyrilletuzi/angular-eslint-zoneless/blob/main/docs/rules/NO_SUBSCRIBE_IN_COMPONENT_CONSTRUCTOR.md',
     },
     schema: [],

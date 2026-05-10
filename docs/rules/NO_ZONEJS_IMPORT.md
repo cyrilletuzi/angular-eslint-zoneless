@@ -2,7 +2,8 @@
 
 Restrict the import of `zone.js`.
 
-Note: most of the time, `zone.js` is imported via `angular.json` configuration, and this rule cannot detect that.
+> [!NOTE]
+> Most of the time, `zone.js` is imported via `angular.json` configuration, and this rule cannot detect that.
 
 ## Configuration
 

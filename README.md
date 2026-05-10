@@ -6,6 +6,7 @@ ESLint rules for Angular zoneless.
 - no zone.js import and provider
 - no zone.js testing functions like `fakeAsync()`
 - no `NgZone`
+- no `ChangeDectectionStrategy.Eager`
 - no `@Input()` and other decorators, to enforce `input()` and other signal equivalents
 - no `ngOnInit()` and other component lifecycle methods, to enforce using signals and resources patterns
 
@@ -67,6 +68,7 @@ module.exports = defineConfig({
 |---|---|
 | [no-zonejs-import](./docs/rules/NO_ZONEJS_IMPORT.md) | ✅ |
 | [no-providezonechangedetection](./docs/rules/NO_PROVIDEZONECHANGEDETECTION.md) | ✅ |
+| [no-eager-change-detection](./docs/rules/NO_EAGER_CHANGE_DETECTION.md) | ✅ |
 | [no-ngoninit](./docs/rules/NO_NGONINIT.md) | ✅ |
 | [no-ngdocheck](./docs/rules/NO_NGDOCHECK.md) | ✅ |
 | [no-ngonchanges](./docs/rules/NO_NGONCHANGES.md) | ✅ |

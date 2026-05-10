@@ -4,7 +4,8 @@ Restrict the usage of `@Output()`.
 
 Use the `output()` version instead
 
-Note: technically, this rule is not related to signals and zoneless, but is for consistency with `input()`.
+> [!NOTE]
+> Technically, this rule is not related to signals and zoneless, but is for consistency with `input()`.
 
 ## Documentation
 
