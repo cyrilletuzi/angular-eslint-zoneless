@@ -11,6 +11,7 @@ import * as noNgdocheck from "./rules/no-ngdocheck.js";
 import * as noNgonchanges from "./rules/no-ngonchanges.js";
 import * as noNgondestroy from "./rules/no-ngondestroy.js";
 import * as noNgoninit from "./rules/no-ngoninit.js";
+import * as noNgzoneTesting from "./rules/no-ngzone-testing.js";
 import * as noNgzone from "./rules/no-ngzone.js";
 import * as noOutputDecorator from "./rules/no-output-decorator.js";
 import * as noProvidezonechangedetection from "./rules/no-providezonechangedetection.js";
@@ -47,6 +48,7 @@ const plugin = {
     [noContentDecorator.ruleName]: noContentDecorator.ruleDefinition,
     [noViewDecorator.ruleName]: noViewDecorator.ruleDefinition,
     [noNgzone.ruleName]: noNgzone.ruleDefinition,
+    [noNgzoneTesting.ruleName]: noNgzoneTesting.ruleDefinition,
     [noDetectchangesTesting.ruleName]: noDetectchangesTesting.ruleDefinition,
     [noZonejsTestingFunctions.ruleName]: noZonejsTestingFunctions.ruleDefinition,
     [noSubscribeInComponentConstructor.ruleName]: noSubscribeInComponentConstructor.ruleDefinition,
@@ -74,6 +76,7 @@ const recommended: ConfigObject = {
     [`${name}/${noContentDecorator.ruleName}`]: "error",
     [`${name}/${noViewDecorator.ruleName}`]: "error",
     [`${name}/${noNgzone.ruleName}`]: "error",
+    [`${name}/${noNgzoneTesting.ruleName}`]: "error",
     [`${name}/${noDetectchangesTesting.ruleName}`]: "error",
     [`${name}/${noZonejsTestingFunctions.ruleName}`]: "error",
   },

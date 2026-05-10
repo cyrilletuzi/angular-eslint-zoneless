@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.1.0 (2026-05-10)
+
+- feat: add `no-ngzone-testing` rule (in recommended preset)
+
 ## 1.0.3 (2026-05-10)
 
 Initial release with these rules:

@@ -82,6 +82,7 @@ module.exports = defineConfig({
 | [no-content-decorator](./docs/rules/NO_CONTENT_DECORATOR.md) | ✅ |
 | [no-view-decorator](./docs/rules/NO_VIEW_DECORATOR.md) | ✅ |
 | [no-ngzone](./docs/rules/NO_NGZONE.md) | ✅ |
+| [no-ngzone-testing](./docs/rules/NO_NGZONE_TESTING.md) | ✅ |
 | [no-detectchanges-testing](./docs/rules/NO_DETECTCHANGES_TESTING.md) | ✅ |
 | [no-zonejs-testing-functions](./docs/rules/NO_ZONEJS_TESTING_FUNCTIONS.md) | ✅ |
 | [no-subscribe-in-component-constructor](./docs/rules/NO_SUBSCRIBE_IN_COMPONENT_CONSTRUCTOR.md) | ❌ |
