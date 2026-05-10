@@ -95,7 +95,7 @@ No, these rules only depends on TypeScript ESLint.
 
 > Is typed linting required?
 
-[Typed linting](https://typescript-eslint.io/getting-started/typed-linting) is not required for now, but it could change in the future as some cases may require it.
+[Typed linting](https://typescript-eslint.io/getting-started/typed-linting) is not required for now, but it could change in the future.
 
 > Is adding a plugin making the project heavier?
 
