@@ -89,6 +89,9 @@ module.exports = defineConfig({
 | [no-changedetectorref](./docs/rules/NO_CHANGEDETECTORREF.md) | ❌ | ✅ |
 | [no-subscribe-in-component-constructor](./docs/rules/NO_SUBSCRIBE_IN_COMPONENT_CONSTRUCTOR.md) | ❌ | ✅ |
 
+> [!TIP]
+> I also published [other lint rules for the Angular injection context](https://github.com/cyrilletuzi/angular-eslint-injection-context).
+
 ## FAQ
 
 > Why not in Angular ESLint?
