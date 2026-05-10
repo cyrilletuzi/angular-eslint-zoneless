@@ -1,4 +1,5 @@
 import type { ConfigObject, Plugin } from "@eslint/core";
+import * as noChangedetectorref from "./rules/no-changedetectorref.js";
 import * as noContentDecorator from "./rules/no-content-decorator.js";
 import * as noDetectchangesTesting from "./rules/no-detectchanges-testing.js";
 import * as noEagerChangeDetection from "./rules/no-eager-change-detection.js";
@@ -51,6 +52,7 @@ const plugin = {
     [noNgzoneTesting.ruleName]: noNgzoneTesting.ruleDefinition,
     [noDetectchangesTesting.ruleName]: noDetectchangesTesting.ruleDefinition,
     [noZonejsTestingFunctions.ruleName]: noZonejsTestingFunctions.ruleDefinition,
+    [noChangedetectorref.ruleName]: noChangedetectorref.ruleDefinition,
     [noSubscribeInComponentConstructor.ruleName]: noSubscribeInComponentConstructor.ruleDefinition,
   },
 } satisfies Plugin;

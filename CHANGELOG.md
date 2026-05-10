@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.2.0 (2026-05-10)
+
+- feat: add `no-changedetectorref` rule
+
 ## 1.1.0 (2026-05-10)
 
 - feat: add `no-ngzone-testing` rule (in recommended preset)
