@@ -1,5 +1,6 @@
 import type { RuleDefinition } from "@eslint/core";
 import { type TSESTree } from "@typescript-eslint/utils";
+import { isImportIdentifier } from "../utils/is-import-identifier";
 
 export const ruleName = "no-ngzone";
 const messageId = "noNgzone";
@@ -19,8 +20,8 @@ export const ruleDefinition: RuleDefinition = {
   },
   create(context) {
     return {
-      Identifier(node: TSESTree.Identifier) {
-        if (node.name === 'NgZone') {
+      "Identifier[name='NgZone']"(node: TSESTree.Identifier) {
+        if (!isImportIdentifier(node)) {
           context.report({
             node,
             messageId,

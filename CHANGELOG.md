@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.2.1 (2026-05-10)
+
+- fix: do not report on import identifiers, to avoid duplicate reports
+
 ## 1.2.0 (2026-05-10)
 
 - feat: add `no-changedetectorref` rule
