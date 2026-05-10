@@ -12,6 +12,7 @@ import * as noNgoninit from "./rules/no-ngoninit.js";
 import * as noNgzone from "./rules/no-ngzone.js";
 import * as noOutputDecorator from "./rules/no-output-decorator.js";
 import * as noProvidezonechangedetection from "./rules/no-providezonechangedetection.js";
+import * as noSubscribeInComponentConstructor from "./rules/no-subscribe-in-component-constructor.js";
 import * as noViewDecorator from "./rules/no-view-decorator.js";
 import * as noZonejsImport from "./rules/no-zonejs-import.js";
 import * as noZonejsTestingFunctions from "./rules/no-zonejs-testing-functions.js";
@@ -44,6 +45,7 @@ const plugin = {
     [noViewDecorator.ruleName]: noViewDecorator.ruleDefinition,
     [noNgzone.ruleName]: noNgzone.ruleDefinition,
     [noZonejsTestingFunctions.ruleName]: noZonejsTestingFunctions.ruleDefinition,
+    [noSubscribeInComponentConstructor.ruleName]: noSubscribeInComponentConstructor.ruleDefinition,
   },
 } satisfies Plugin;
 

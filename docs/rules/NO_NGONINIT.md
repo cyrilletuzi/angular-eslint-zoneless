@@ -23,13 +23,30 @@ Resources and signals are designed to be reactive, so waiting manually for the `
 ## ❌ Invalid
 
 ```typescript
-@Component()
+@Component({
+  template: `
+    @if (product(); as productValue) {
+      <app-product-card [product]="productValue" />
+    }
+  `,
+})
 export class ProductPage implements OnInit {
   readonly id = input.required<number>();
 
+  private readonly destroyRef = inject(DestroyRef);
+  private readonly productApi = inject(ProductApi);
+
+  protected readonly product = signal<Product | undefined>(undefined);
+
   ngOnInit(): void {
-    const productApi = inject(ProductApi);
-    productApi.getProduct(this.id()).subscribe();
+    this.productApi.getProduct(this.id()).pipe(
+      takeUntilDestroyed(this.destroyRef),
+    ).subscribe({
+      next: (product) => {
+        this.product.set(product);
+      },
+      error: () => {}
+    });
   }
 }
 ```
@@ -49,16 +66,26 @@ export class ProductsList implements OnInit {
 ## ✅ Valid
 
 ```typescript
-@Component()
+@Component({
+  template: `
+    @if (resource.hasValue()) {
+      <app-product-card [product]="resource.value()" />
+    }
+  `,
+})
 export class ProductPage {
   readonly id = input.required<number>();
 
+  private readonly productApi = inject(ProductApi);
+
+  protected readonly resource: Resource<Product | undefined>;
+
   constructor() {
-    const productApi = inject(ProductApi);
-    rxResource({
+    const resourceRef = rxResource({
       params: () => this.id(),
-      stream: ({ params }) => productApi.getProduct(params),
+      stream: ({ params }) => this.productApi.getProduct(params),
     });
+    this.resource = resourceRef.asReadonly();
   }
 }
 ```
