@@ -1,5 +1,5 @@
 import type { RuleDefinition } from "@eslint/core";
-import { AST_NODE_TYPES, type TSESTree } from "@typescript-eslint/utils";
+import { type TSESTree } from "@typescript-eslint/utils";
 
 export const ruleName = "no-input-decorator";
 const messageId = "noInputDecorator";
@@ -19,17 +19,11 @@ export const ruleDefinition: RuleDefinition = {
   },
   create(context) {
     return {
-      Decorator(node: TSESTree.Decorator) {
-        if (
-          node.expression.type === AST_NODE_TYPES.CallExpression &&
-          node.expression.callee.type === AST_NODE_TYPES.Identifier &&
-          node.expression.callee.name === "Input"
-        ) {
-          context.report({
-            node,
-            messageId,
-          });
-        }
+      "Decorator > CallExpression[callee.type='Identifier'][callee.name='Input']"(node: TSESTree.Decorator) {
+        context.report({
+          node,
+          messageId,
+        });
       },
     };
   },

@@ -1,5 +1,5 @@
 import type { RuleDefinition } from "@eslint/core";
-import { AST_NODE_TYPES, type TSESTree } from "@typescript-eslint/utils";
+import { type TSESTree } from "@typescript-eslint/utils";
 import { isInAngularClass } from "../utils/angular-class-decorator";
 
 export const ruleName = "no-detectchanges-testing";
@@ -19,11 +19,8 @@ export const ruleDefinition: RuleDefinition = {
   },
   create(context) {
     return {
-      CallExpression(node: TSESTree.CallExpression) {
+      "CallExpression > MemberExpression[property.type='Identifier'][property.name='detectChanges'][computed=false]"(node: TSESTree.CallExpression) {
         if (
-          node.callee.type === AST_NODE_TYPES.MemberExpression &&
-          node.callee.property.type === AST_NODE_TYPES.Identifier &&
-          node.callee.property.name === "detectChanges" &&
           // Report only in tests, otherwise it will report on `ChangeDetectorRef.detectChanges()`
           !isInAngularClass(node, ["Component", "Directive"])
         ) {

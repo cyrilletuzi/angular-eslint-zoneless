@@ -1,5 +1,5 @@
 import type { RuleDefinition } from "@eslint/core";
-import { AST_NODE_TYPES, type TSESTree } from "@typescript-eslint/utils";
+import { type TSESTree } from "@typescript-eslint/utils";
 
 export const ruleName = "no-ngzone-testing";
 const messageId = "noNgzoneTesting";
@@ -18,16 +18,11 @@ export const ruleDefinition: RuleDefinition = {
   },
   create(context) {
     return {
-      MemberExpression(node: TSESTree.MemberExpression) {
-        if (
-          node.property.type === AST_NODE_TYPES.Identifier &&
-          node.property.name === "ngZone"
-        ) {
-          context.report({
-            node,
-            messageId,
-          });
-        }
+      "MemberExpression[property.type='Identifier'][property.name='ngZone'][computed=false]"(node: TSESTree.MemberExpression) {
+        context.report({
+          node,
+          messageId,
+        });
       },
     };
   },

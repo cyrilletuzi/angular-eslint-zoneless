@@ -1,5 +1,5 @@
 import type { RuleDefinition } from "@eslint/core";
-import { AST_NODE_TYPES, type TSESTree } from "@typescript-eslint/utils";
+import { type TSESTree } from "@typescript-eslint/utils";
 
 export const ruleName = "no-eager-change-detection";
 const messageId = "noEagerChangeDetection";
@@ -19,18 +19,11 @@ export const ruleDefinition: RuleDefinition = {
   },
   create(context) {
     return {
-      MemberExpression(node: TSESTree.MemberExpression) {
-        if (
-          node.object.type === AST_NODE_TYPES.Identifier &&
-          node.object.name === "ChangeDetectionStrategy" &&
-          node.property.type === AST_NODE_TYPES.Identifier &&
-          (node.property.name === "Eager" || node.property.name === "Default")
-        ) {
-          context.report({
-            node,
-            messageId,
-          });
-        }
+      "MemberExpression[object.type='Identifier'][object.name='ChangeDetectionStrategy'][property.type='Identifier'][property.name=/^(Eager|Default)$/]"(node: TSESTree.MemberExpression) {
+        context.report({
+          node,
+          messageId,
+        });
       },
     };
   },

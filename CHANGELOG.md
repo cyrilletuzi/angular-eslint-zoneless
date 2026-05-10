@@ -3,6 +3,7 @@
 ## 1.2.1 (2026-05-10)
 
 - fix: do not report on import identifiers, to avoid duplicate reports
+- perf: use selectors
 
 ## 1.2.0 (2026-05-10)
 

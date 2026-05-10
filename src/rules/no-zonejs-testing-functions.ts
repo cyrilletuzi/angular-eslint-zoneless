@@ -1,5 +1,5 @@
 import type { RuleDefinition } from "@eslint/core";
-import { AST_NODE_TYPES, type TSESTree } from "@typescript-eslint/utils";
+import { type TSESTree } from "@typescript-eslint/utils";
 
 export const ruleName = "no-zonejs-testing-functions";
 const messageId = "noZonejsTestingFunctions";
@@ -19,25 +19,11 @@ export const ruleDefinition: RuleDefinition = {
   },
   create(context) {
     return {
-      CallExpression(node: TSESTree.CallExpression) {
-        if (node.callee.type === AST_NODE_TYPES.Identifier) {
-          const testingFunctions: ReadonlySet<string> = new Set([
-            "fakeAsync",
-            "discardPeriodicTasks",
-            "flush",
-            "flushMicrotasks",
-            "resetFakeAsyncZone",
-            "tick",
-            "waitForAsync",
-          ]);
-
-          if (testingFunctions.has(node.callee.name)) {
-            context.report({
-              node,
-              messageId,
-            });
-          }
-        }
+      "CallExpression[callee.type='Identifier'][callee.name=/^(fakeAsync|discardPeriodicTasks|flush|flushMicrotasks|resetFakeAsyncZone|tick|waitForAsync)$/]"(node: TSESTree.CallExpression) {
+        context.report({
+          node,
+          messageId,
+        });
       },
     };
   },

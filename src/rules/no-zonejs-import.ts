@@ -19,13 +19,11 @@ export const ruleDefinition: RuleDefinition = {
   },
   create(context) {
     return {
-      ImportDeclaration(node: TSESTree.ImportDeclaration) {
-        if (node.source.value === "zone.js") {
-          context.report({
-            node,
-            messageId,
-          });
-        }
+      "ImportDeclaration[source.value='zone.js']"(node: TSESTree.ImportDeclaration) {
+        context.report({
+          node,
+          messageId,
+        });
       },
     };
   },

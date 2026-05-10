@@ -1,5 +1,5 @@
 import type { RuleDefinition } from "@eslint/core";
-import { AST_NODE_TYPES, type TSESTree } from "@typescript-eslint/utils";
+import { type TSESTree } from "@typescript-eslint/utils";
 import { isInAngularComponentConstructor } from "../utils/in-constructor";
 
 export const ruleName = "no-subscribe-in-component-constructor";
@@ -19,13 +19,8 @@ export const ruleDefinition: RuleDefinition = {
   },
   create(context) {
     return {
-      CallExpression(node: TSESTree.CallExpression) {
-        if (
-          node.callee.type === AST_NODE_TYPES.MemberExpression &&
-          node.callee.property.type === AST_NODE_TYPES.Identifier &&
-          node.callee.property.name === 'subscribe' &&
-          isInAngularComponentConstructor(node)
-        ) {
+      "CallExpression > MemberExpression[property.type='Identifier'][property.name='subscribe'][computed=false]"(node: TSESTree.CallExpression) {
+        if (isInAngularComponentConstructor(node)) {
           context.report({
             node,
             messageId,

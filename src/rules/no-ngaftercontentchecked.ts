@@ -1,5 +1,5 @@
 import type { RuleDefinition } from "@eslint/core";
-import { AST_NODE_TYPES, type TSESTree } from "@typescript-eslint/utils";
+import { type TSESTree } from "@typescript-eslint/utils";
 
 export const ruleName = "no-ngaftercontentchecked";
 const messageId = "noNgaftercontentchecked";
@@ -19,16 +19,11 @@ export const ruleDefinition: RuleDefinition = {
   },
   create(context) {
     return {
-      MethodDefinition(node: TSESTree.MethodDefinition) {
-        if (
-          node.key.type === AST_NODE_TYPES.Identifier &&
-          node.key.name === "ngAfterContentChecked"
-        ) {
-          context.report({
-            node,
-            messageId,
-          });
-        }
+      "MethodDefinition[key.type='Identifier'][key.name='ngAfterContentChecked']"(node: TSESTree.MethodDefinition) {
+        context.report({
+          node,
+          messageId,
+        });
       },
     };
   },
