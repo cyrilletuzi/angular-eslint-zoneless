@@ -1,5 +1,6 @@
 import type { ConfigObject, Plugin } from "@eslint/core";
 import * as noContentDecorator from "./rules/no-content-decorator.js";
+import * as noDetectchangesTesting from "./rules/no-detectchanges-testing.js";
 import * as noEagerChangeDetection from "./rules/no-eager-change-detection.js";
 import * as noInputDecorator from "./rules/no-input-decorator.js";
 import * as noNgaftercontentchecked from "./rules/no-ngaftercontentchecked.js";
@@ -46,6 +47,7 @@ const plugin = {
     [noContentDecorator.ruleName]: noContentDecorator.ruleDefinition,
     [noViewDecorator.ruleName]: noViewDecorator.ruleDefinition,
     [noNgzone.ruleName]: noNgzone.ruleDefinition,
+    [noDetectchangesTesting.ruleName]: noDetectchangesTesting.ruleDefinition,
     [noZonejsTestingFunctions.ruleName]: noZonejsTestingFunctions.ruleDefinition,
     [noSubscribeInComponentConstructor.ruleName]: noSubscribeInComponentConstructor.ruleDefinition,
   },
@@ -72,6 +74,7 @@ const recommended: ConfigObject = {
     [`${name}/${noContentDecorator.ruleName}`]: "error",
     [`${name}/${noViewDecorator.ruleName}`]: "error",
     [`${name}/${noNgzone.ruleName}`]: "error",
+    [`${name}/${noDetectchangesTesting.ruleName}`]: "error",
     [`${name}/${noZonejsTestingFunctions.ruleName}`]: "error",
   },
 };

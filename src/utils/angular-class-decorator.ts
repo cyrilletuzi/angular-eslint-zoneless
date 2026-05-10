@@ -1,4 +1,5 @@
 import { AST_NODE_TYPES, ASTUtils, type TSESTree } from "@typescript-eslint/utils";
+import { findNearestAncestorOf } from "./ast-traversal";
 
 export type AngularClassDecorator = "Component" | "Directive" | "Injectable" | "NgModule" | "Pipe" | "Service";
 
@@ -37,3 +38,18 @@ export function findAngularClassDecorator({ decorators }: TSESTree.ClassDeclarat
     .find((value): value is AngularClassDecorator => angularClassDecorators.has(value as AngularClassDecorator)
     );
 };
+
+export function isInAngularClass(node: TSESTree.Node, allowedDecorators?: readonly AngularClassDecorator[]): boolean {
+  const classDeclaration = findNearestAncestorOf(
+    node,
+    (node) => node.type === AST_NODE_TYPES.ClassDeclaration,
+  );
+
+  if (
+    classDeclaration &&
+    findAngularClassDecorator(classDeclaration, allowedDecorators)
+  ) {
+    return true;
+  }
+  return false;
+}
