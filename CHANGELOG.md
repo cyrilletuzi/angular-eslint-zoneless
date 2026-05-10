@@ -1,6 +1,6 @@
 # Changelog
 
-## 1.0.1 (2026-05-10)
+## 1.0.3 (2026-05-10)
 
 Initial release with these rules:
 | Rule & documentation | in recommended |
