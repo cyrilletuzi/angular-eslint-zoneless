@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.3.0 (2026-05-11)
+
+- feat: add `no-asyncpipe` rule
+
 ## 1.2.1 (2026-05-10)
 
 - fix: do not report on import identifiers, to avoid duplicate reports

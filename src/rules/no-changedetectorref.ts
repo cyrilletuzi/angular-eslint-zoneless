@@ -12,7 +12,7 @@ export const ruleDefinition: RuleDefinition = {
       [messageId]: `\`ChangeDetectorRef()\` should be avoided in a zoneless application, use signals and resources reactivity instead.`,
     },
     docs: {
-      description: `Checks that \`ChangeDetectorRef()\` is not used.`,
+      description: `Checks that \`ChangeDetectorRef\` is not used.`,
       url: 'https://github.com/cyrilletuzi/angular-eslint-zoneless/blob/main/docs/rules/NO_CHANGEDETECTORREF.md',
     },
     schema: [],

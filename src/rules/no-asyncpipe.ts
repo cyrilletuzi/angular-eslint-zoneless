@@ -2,25 +2,25 @@ import type { RuleDefinition } from "@eslint/core";
 import { type TSESTree } from "@typescript-eslint/utils";
 import { isImportIdentifier } from "../utils/is-import-identifier";
 
-export const ruleName = "no-ngzone";
-const messageId = "noNgzone";
+export const ruleName = "no-asyncpipe";
+const messageId = "noAsyncpipe";
 
 export const ruleDefinition: RuleDefinition = {
   meta: {
     type: "problem",
     messages: {
-      [messageId]: `\`NgZone()\` is useless and does not work in a zoneless application.`,
+      [messageId]: `\`AsyncPipe\` should be avoided in a zoneless application, use \`toSignal()\` or \`rxResource()\` instead.`,
     },
     docs: {
-      description: `Checks that \`NgZone\` is not used.`,
-      url: 'https://github.com/cyrilletuzi/angular-eslint-zoneless/blob/main/docs/rules/NO_NGZONE.md',
+      description: `Checks that \`AsyncPipe\` is not used.`,
+      url: 'https://github.com/cyrilletuzi/angular-eslint-zoneless/blob/main/docs/rules/NO_ASYNCPIPE.md',
       recommended: true,
     },
     schema: [],
   },
   create(context) {
     return {
-      "Identifier[name='NgZone']"(node: TSESTree.Identifier) {
+      "Identifier[name='AsyncPipe']"(node: TSESTree.Identifier) {
         if (!isImportIdentifier(node)) {
           context.report({
             node,

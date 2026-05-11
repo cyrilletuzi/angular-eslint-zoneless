@@ -82,6 +82,7 @@ module.exports = defineConfig({
 | [no-output-decorator](./docs/rules/NO_OUTPUT_DECORATOR.md) | ✅ | ✅ |
 | [no-content-decorator](./docs/rules/NO_CONTENT_DECORATOR.md) | ✅ | ✅ |
 | [no-view-decorator](./docs/rules/NO_VIEW_DECORATOR.md) | ✅ | ✅ |
+| [no-asyncpipe](./docs/rules/NO_ASYNCPIPE.md_) | ✅ | ✅ |
 | [no-ngzone](./docs/rules/NO_NGZONE.md) | ✅ | ✅ |
 | [no-ngzone-testing](./docs/rules/NO_NGZONE_TESTING.md) | ✅ | ✅ |
 | [no-detectchanges-testing](./docs/rules/NO_DETECTCHANGES_TESTING.md) | ✅ | ✅ |

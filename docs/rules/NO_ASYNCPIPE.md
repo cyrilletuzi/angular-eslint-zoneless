@@ -1,8 +1,8 @@
-# no-subscribe-in-component-constructor
+# no-asyncpipe
 
-Restrict the usage of `.subscribe()` in components constructors.
+Restrict the usage of `AsyncPipe`.
 
-An observable inside a component constructor can generally be managed with `toSignal()` or `rxResource()`.
+Use `toSignal()` or `rxResource()` instead.
 
 ## Documentation
 
@@ -11,21 +11,14 @@ An observable inside a component constructor can generally be managed with `toSi
 
 ## Configuration
 
-- in the `strict` preset (see the [README](../../README.md) for the configuration)
+- in the `recommended` preset (see the [README](../../README.md) for the configuration)
 - or just this rule:
 ```json
 {
   "rules": {
-    "angular-eslint-zoneless/no-subscribe-in-component-constructor": "error"
+    "angular-eslint-zoneless/no-asyncpipe": "error"
   }
 }
-```
-
-> [!NOTE]
-> This rule is not in the recommended preset yet, as it is still battle-tested to be sure it is applicable to most cases. New applications should probably enable it; existing ones may enable it and allow exceptions with:
-
-```typescript
-// eslint-disable-next-line angular-eslint-zoneless/no-subscribe-in-component-constructor
 ```
 
 ## ❌ Invalid
@@ -33,42 +26,41 @@ An observable inside a component constructor can generally be managed with `toSi
 ```typescript
 @Component({
   template: `
-    @if (products(); as productsValue) {
+    @if (products | async; as productsValue) {
       @for (product of productsValue) {
         <app-product-card [product]="product" />
       }
     }
   `,
+  imports: [AsyncPipe],
 })
 export class ProductPage {
-  protected readonly products = signal<readonly Product[] | undefined>(undefined);
+  protected readonly products: Observable<readonly Products[]>;
 
   constructor() {
     const productApi = inject(ProductApi);
-    productApi.getProducts().pipe(
+    this.products = productApi.getProducts().pipe(
       takeUntilDestroyed(),
-    ).subscribe({
-      next: (products) => {
-        this.products.set(products);
-      },
-      error: () => {},
-    });
+    );
   }
 }
 ```
 
 ```typescript
-@Component()
+@Component({
+  template: `
+    @if (isAuthenticated | async) {}
+  `,
+  imports: [AsyncPipe],
+})
 export class AdminPage implements OnInit {
   private readonly auth = inject(Auth);
-  private readonly isAuthenticated = signal(false);
+  protected readonly isAuthenticated: Observable<boolan>;
 
   constructor() {
-    this.auth.isAuthenticatedObservable.pipe(
+    this.isAuthenticated = this.auth.isAuthenticatedObservable.pipe(
       takeUntilDestroyed(),
-    ).subscribe((isAuthenticated) => {
-      this.isAuthenticated.set(isAuthenticated);
-    });
+    );
   }
 }
 ```
@@ -99,7 +91,11 @@ export class ProductsPage {
 ```
 
 ```typescript
-@Component()
+@Component({
+  template: `
+    @if (isAuthenticated()) {}
+  `,
+})
 export class AdminPage implements OnInit {
   private readonly auth = inject(Auth);
   private readonly isAuthenticated = toSignal(

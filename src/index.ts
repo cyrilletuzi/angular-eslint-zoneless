@@ -1,4 +1,5 @@
 import type { ConfigObject, Plugin } from "@eslint/core";
+import * as noAsyncpipe from "./rules/no-asyncpipe.js";
 import * as noChangedetectorref from "./rules/no-changedetectorref.js";
 import * as noContentDecorator from "./rules/no-content-decorator.js";
 import * as noDetectchangesTesting from "./rules/no-detectchanges-testing.js";
@@ -51,6 +52,7 @@ const plugin = {
     [noOutputDecorator.ruleName]: noOutputDecorator.ruleDefinition,
     [noContentDecorator.ruleName]: noContentDecorator.ruleDefinition,
     [noViewDecorator.ruleName]: noViewDecorator.ruleDefinition,
+    [noAsyncpipe.ruleName]: noAsyncpipe.ruleDefinition,
     [noNgzone.ruleName]: noNgzone.ruleDefinition,
     [noNgzoneTesting.ruleName]: noNgzoneTesting.ruleDefinition,
     [noDetectchangesTesting.ruleName]: noDetectchangesTesting.ruleDefinition,
@@ -80,6 +82,7 @@ const recommended: ConfigObject = {
     [`${name}/${noOutputDecorator.ruleName}`]: "error",
     [`${name}/${noContentDecorator.ruleName}`]: "error",
     [`${name}/${noViewDecorator.ruleName}`]: "error",
+    [`${name}/${noAsyncpipe.ruleName}`]: "error",
     [`${name}/${noNgzone.ruleName}`]: "error",
     [`${name}/${noNgzoneTesting.ruleName}`]: "error",
     [`${name}/${noDetectchangesTesting.ruleName}`]: "error",
