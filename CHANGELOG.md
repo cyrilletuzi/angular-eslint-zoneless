@@ -3,6 +3,7 @@
 ## 1.3.0 (2026-05-11)
 
 - feat: add `no-asyncpipe` rule
+- feat: add `minimal` preset
 
 ## 1.2.1 (2026-05-10)
 

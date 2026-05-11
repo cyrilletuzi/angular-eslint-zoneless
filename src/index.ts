@@ -28,6 +28,9 @@ const { name, version } =
 
 const plugin = {
   configs: {
+    get minimal() {
+      return minimal;
+    },
     get recommended() {
       return recommended;
     },
@@ -62,13 +65,25 @@ const plugin = {
   },
 } satisfies Plugin;
 
-const recommended: ConfigObject = {
+const minimal: ConfigObject = {
   plugins: {
     [name]: plugin
   },
   rules: {
     [`${name}/${noZonejsImport.ruleName}`]: "error",
     [`${name}/${noProvidezonechangedetection.ruleName}`]: "error",
+    [`${name}/${noNgzone.ruleName}`]: "error",
+    [`${name}/${noNgzoneTesting.ruleName}`]: "error",
+    [`${name}/${noZonejsTestingFunctions.ruleName}`]: "error",
+  },
+};
+
+const recommended: ConfigObject = {
+  plugins: {
+    [name]: plugin
+  },
+  rules: {
+    ...minimal.rules,
     [`${name}/${noEagerChangeDetection.ruleName}`]: "error",
     [`${name}/${noNgoninit.ruleName}`]: "error",
     [`${name}/${noNgdocheck.ruleName}`]: "error",
@@ -83,10 +98,7 @@ const recommended: ConfigObject = {
     [`${name}/${noContentDecorator.ruleName}`]: "error",
     [`${name}/${noViewDecorator.ruleName}`]: "error",
     [`${name}/${noAsyncpipe.ruleName}`]: "error",
-    [`${name}/${noNgzone.ruleName}`]: "error",
-    [`${name}/${noNgzoneTesting.ruleName}`]: "error",
     [`${name}/${noDetectchangesTesting.ruleName}`]: "error",
-    [`${name}/${noZonejsTestingFunctions.ruleName}`]: "error",
   },
 };
 

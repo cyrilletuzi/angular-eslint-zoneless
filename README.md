@@ -51,8 +51,7 @@ module.exports = defineConfig({
     eslint.configs.recommended,
     tsEslint.configs.strictTypeChecked,
     tsEslint.configs.stylisticTypeChecked,
-    angularEslintZoneless.configs.recommended, // ⬅️ add this
-    angularEslintZoneless.configs.strict, // ⬅️ or this (see the differences below)
+    angularEslintZoneless.configs.recommended, // ⬅️ add this (or one of the other presets below)
   ],
   rules: {},
 });
@@ -63,32 +62,37 @@ module.exports = defineConfig({
 > [!NOTE]
 > In VS Code, it may be required to restart for the ESLint extension to apply the new rules.
 
-## Rules
+## Rules and presets
 
-| Rule & documentation | in recommended | in strict |
-|---|---|---|
-| [no-zonejs-import](./docs/rules/NO_ZONEJS_IMPORT.md) | ✅ | ✅ |
-| [no-providezonechangedetection](./docs/rules/NO_PROVIDEZONECHANGEDETECTION.md) | ✅ | ✅ |
-| [no-eager-change-detection](./docs/rules/NO_EAGER_CHANGE_DETECTION.md) | ✅ | ✅ |
-| [no-ngoninit](./docs/rules/NO_NGONINIT.md) | ✅ | ✅ |
-| [no-ngdocheck](./docs/rules/NO_NGDOCHECK.md) | ✅ | ✅ |
-| [no-ngonchanges](./docs/rules/NO_NGONCHANGES.md) | ✅ | ✅ |
-| [no-ngcontentviewinit](./docs/rules/NO_NGAFTERCONTENTINIT.md) | ✅ | ✅ |
-| [no-ngcontentviewchecked](./docs/rules/NO_NGAFTERCONTENTCHECKED.md) | ✅ | ✅ |
-| [no-ngafterviewinit](./docs/rules/NO_NGAFTERVIEWINIT.md) | ✅ | ✅ |
-| [no-ngafterviewchecked](./docs/rules/NO_NGAFTERVIEWCHECKED.md) | ✅ | ✅ |
-| [no-ngondestroy](./docs/rules/NO_NGONDESTROY.md) | ✅ | ✅ |
-| [no-input-decorator](./docs/rules/NO_INPUT_DECORATOR.md) | ✅ | ✅ |
-| [no-output-decorator](./docs/rules/NO_OUTPUT_DECORATOR.md) | ✅ | ✅ |
-| [no-content-decorator](./docs/rules/NO_CONTENT_DECORATOR.md) | ✅ | ✅ |
-| [no-view-decorator](./docs/rules/NO_VIEW_DECORATOR.md) | ✅ | ✅ |
-| [no-asyncpipe](./docs/rules/NO_ASYNCPIPE.md_) | ✅ | ✅ |
-| [no-ngzone](./docs/rules/NO_NGZONE.md) | ✅ | ✅ |
-| [no-ngzone-testing](./docs/rules/NO_NGZONE_TESTING.md) | ✅ | ✅ |
-| [no-detectchanges-testing](./docs/rules/NO_DETECTCHANGES_TESTING.md) | ✅ | ✅ |
-| [no-zonejs-testing-functions](./docs/rules/NO_ZONEJS_TESTING_FUNCTIONS.md) | ✅ | ✅ |
-| [no-changedetectorref](./docs/rules/NO_CHANGEDETECTORREF.md) | ❌ | ✅ |
-| [no-subscribe-in-component-constructor](./docs/rules/NO_SUBSCRIBE_IN_COMPONENT_CONSTRUCTOR.md) | ❌ | ✅ |
+There are 3 presets available:
+- `minimal`: restrict what really does not work without zone.js
+- `recommended`: `minimal` + enforce signals patterns
+- `strict`: `recommended` + go even further in signals patterns
+
+| Rule & documentation | in minimal| in recommended | in strict |
+|---|---|---|---|
+| [no-zonejs-import](./docs/rules/NO_ZONEJS_IMPORT.md) | ✅ | ✅ | ✅ |
+| [no-providezonechangedetection](./docs/rules/NO_PROVIDEZONECHANGEDETECTION.md) | ✅  | ✅ | ✅ |
+| [no-ngzone](./docs/rules/NO_NGZONE.md) | ✅ | ✅ | ✅ |
+| [no-ngzone-testing](./docs/rules/NO_NGZONE_TESTING.md) | ✅ | ✅ | ✅ |
+| [no-zonejs-testing-functions](./docs/rules/NO_ZONEJS_TESTING_FUNCTIONS.md) | ✅ | ✅ | ✅ |
+| [no-eager-change-detection](./docs/rules/NO_EAGER_CHANGE_DETECTION.md) | ❌ | ✅ | ✅ |
+| [no-ngoninit](./docs/rules/NO_NGONINIT.md) | ❌ | ✅ | ✅ |
+| [no-ngdocheck](./docs/rules/NO_NGDOCHECK.md) | ❌ | ✅ | ✅ |
+| [no-ngonchanges](./docs/rules/NO_NGONCHANGES.md) | ❌ | ✅ | ✅ |
+| [no-ngcontentviewinit](./docs/rules/NO_NGAFTERCONTENTINIT.md) | ❌ | ✅ | ✅ |
+| [no-ngcontentviewchecked](./docs/rules/NO_NGAFTERCONTENTCHECKED.md) | ❌ | ✅ | ✅ |
+| [no-ngafterviewinit](./docs/rules/NO_NGAFTERVIEWINIT.md) | ❌ | ✅ | ✅ |
+| [no-ngafterviewchecked](./docs/rules/NO_NGAFTERVIEWCHECKED.md) | ❌ | ✅ | ✅ |
+| [no-ngondestroy](./docs/rules/NO_NGONDESTROY.md) | ❌ | ✅ | ✅ |
+| [no-input-decorator](./docs/rules/NO_INPUT_DECORATOR.md) | ❌ | ✅ | ✅ |
+| [no-output-decorator](./docs/rules/NO_OUTPUT_DECORATOR.md) | ❌ | ✅ | ✅ |
+| [no-content-decorator](./docs/rules/NO_CONTENT_DECORATOR.md) | ❌ | ✅ | ✅ |
+| [no-view-decorator](./docs/rules/NO_VIEW_DECORATOR.md) | ❌ | ✅ | ✅ |
+| [no-asyncpipe](./docs/rules/NO_ASYNCPIPE.md_) | ❌ | ✅ | ✅ |
+| [no-detectchanges-testing](./docs/rules/NO_DETECTCHANGES_TESTING.md) | ❌ | ✅ | ✅ |
+| [no-changedetectorref](./docs/rules/NO_CHANGEDETECTORREF.md) | ❌ | ❌ | ✅ |
+| [no-subscribe-in-component-constructor](./docs/rules/NO_SUBSCRIBE_IN_COMPONENT_CONSTRUCTOR.md) | ❌ | ❌ | ✅ |
 
 > [!TIP]
 > I also published [other lint rules for the Angular injection context](https://github.com/cyrilletuzi/angular-eslint-injection-context).
