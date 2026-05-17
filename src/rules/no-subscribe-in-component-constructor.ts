@@ -1,5 +1,5 @@
 import type { RuleDefinition } from "@eslint/core";
-import { type TSESTree } from "@typescript-eslint/utils";
+import type { TSESTree } from "@typescript-eslint/utils";
 import { isInAngularComponentConstructor } from "../utils/in-constructor";
 
 export const ruleName = "no-subscribe-in-component-constructor";

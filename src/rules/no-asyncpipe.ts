@@ -1,5 +1,5 @@
 import type { RuleDefinition } from "@eslint/core";
-import { type TSESTree } from "@typescript-eslint/utils";
+import type { TSESTree } from "@typescript-eslint/utils";
 import { isImportIdentifier } from "../utils/is-import-identifier";
 
 export const ruleName = "no-asyncpipe";

@@ -1,5 +1,5 @@
 import type { RuleDefinition } from "@eslint/core";
-import { type TSESTree } from "@typescript-eslint/utils";
+import type { TSESTree } from "@typescript-eslint/utils";
 
 export const ruleName = "no-ngaftercontentchecked";
 const messageId = "noNgaftercontentchecked";
