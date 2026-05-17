@@ -1,8 +1,12 @@
 # Changelog
 
+## 1.4.0 (2026-05-17)
+
+- feat: add `no-writable-directive-property` rule (in recommended preset)
+
 ## 1.3.0 (2026-05-11)
 
-- feat: add `no-asyncpipe` rule
+- feat: add `no-asyncpipe` rule (in recommended preset)
 - feat: add `minimal` preset
 
 ## 1.2.1 (2026-05-10)

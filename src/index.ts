@@ -19,6 +19,7 @@ import * as noOutputDecorator from "./rules/no-output-decorator.js";
 import * as noProvidezonechangedetection from "./rules/no-providezonechangedetection.js";
 import * as noSubscribeInComponentConstructor from "./rules/no-subscribe-in-component-constructor.js";
 import * as noViewDecorator from "./rules/no-view-decorator.js";
+import * as noWritableDirectiveProperty from "./rules/no-writable-directive-property.js";
 import * as noZonejsImport from "./rules/no-zonejs-import.js";
 import * as noZonejsTestingFunctions from "./rules/no-zonejs-testing-functions.js";
 
@@ -42,6 +43,7 @@ const plugin = {
   rules: {
     [noZonejsImport.ruleName]: noZonejsImport.ruleDefinition,
     [noProvidezonechangedetection.ruleName]: noProvidezonechangedetection.ruleDefinition,
+    [noWritableDirectiveProperty.ruleName]: noWritableDirectiveProperty.ruleDefinition,
     [noEagerChangeDetection.ruleName]: noEagerChangeDetection.ruleDefinition,
     [noNgoninit.ruleName]: noNgoninit.ruleDefinition,
     [noNgdocheck.ruleName]: noNgdocheck.ruleDefinition,
@@ -84,6 +86,7 @@ const recommended: ConfigObject = {
   },
   rules: {
     ...minimal.rules,
+    [`${name}/${noWritableDirectiveProperty.ruleName}`]: "error",
     [`${name}/${noEagerChangeDetection.ruleName}`]: "error",
     [`${name}/${noNgoninit.ruleName}`]: "error",
     [`${name}/${noNgdocheck.ruleName}`]: "error",
