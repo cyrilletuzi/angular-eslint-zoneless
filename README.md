@@ -6,6 +6,7 @@ ESLint rules for Angular zoneless.
 - no zone.js import and provider
 - no zone.js testing functions like `fakeAsync()`
 - no `NgZone`
+- no public or protected writable properties in components
 - no `ChangeDectectionStrategy.Eager`
 - no `@Input()` and other decorators, to enforce `input()` and other signal equivalents
 - no `ngOnInit()` and other component lifecycle methods, to enforce using signals and resources patterns

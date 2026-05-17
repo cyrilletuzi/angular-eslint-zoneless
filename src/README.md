@@ -5,6 +5,7 @@ ESLint rules for Angular zoneless.
 **Checks that a zoneless application does not use zone.js-based features and that signals/resources patterns are used, for example:**
 - no zone.js import and provider
 - no zone.js testing functions like `fakeAsync()`
+- no public or protected writable properties in components
 - no `ChangeDectectionStrategy.Eager`
 - no `NgZone`
 - no `@Input()` and other decorators, to enforce `input()` and other signal equivalents
