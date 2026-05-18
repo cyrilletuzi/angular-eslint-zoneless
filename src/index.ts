@@ -3,6 +3,7 @@ import * as noAsyncpipe from "./rules/no-asyncpipe.js";
 import * as noChangedetectorref from "./rules/no-changedetectorref.js";
 import * as noContentDecorator from "./rules/no-content-decorator.js";
 import * as noDetectchangesTesting from "./rules/no-detectchanges-testing.js";
+import * as noDirectiveAccessor from "./rules/no-directive-accessor.js";
 import * as noDirectiveWritableProperty from "./rules/no-directive-writable-property.js";
 import * as noEagerChangeDetection from "./rules/no-eager-change-detection.js";
 import * as noInputDecorator from "./rules/no-input-decorator.js";
@@ -44,6 +45,7 @@ const plugin = {
     [noZonejsImport.ruleName]: noZonejsImport.ruleDefinition,
     [noProvidezonechangedetection.ruleName]: noProvidezonechangedetection.ruleDefinition,
     [noDirectiveWritableProperty.ruleName]: noDirectiveWritableProperty.ruleDefinition,
+    [noDirectiveAccessor.ruleName]: noDirectiveAccessor.ruleDefinition,
     [noEagerChangeDetection.ruleName]: noEagerChangeDetection.ruleDefinition,
     [noNgoninit.ruleName]: noNgoninit.ruleDefinition,
     [noNgdocheck.ruleName]: noNgdocheck.ruleDefinition,
@@ -87,6 +89,7 @@ const recommended: ConfigObject = {
   rules: {
     ...minimal.rules,
     [`${name}/${noDirectiveWritableProperty.ruleName}`]: "error",
+    [`${name}/${noDirectiveAccessor.ruleName}`]: "error",
     [`${name}/${noEagerChangeDetection.ruleName}`]: "error",
     [`${name}/${noNgoninit.ruleName}`]: "error",
     [`${name}/${noNgdocheck.ruleName}`]: "error",

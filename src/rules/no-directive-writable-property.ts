@@ -21,7 +21,7 @@ export const ruleDefinition: RuleDefinition = {
   create(context) {
     return {
       /* React to: explicit `public` properties, explicit `protected` properties, implicit public properties which are not `#private` */
-      "PropertyDefinition:not([accessibility='public']):not([readonly=true]), PropertyDefinition[accessibility='protected']:not([readonly=true]), PropertyDefinition:not([accessibility]):not([readonly=true]):not([key.type='PrivateIdentifier'])"(node: TSESTree.MethodDefinition) {
+      "PropertyDefinition[key.type!='PrivateIdentifier'][accessibility!='private'][readonly!=true]"(node: TSESTree.MethodDefinition) {
         if (isInAngularClass(node, ["Component", "Directive"])) {
           context.report({
             node,

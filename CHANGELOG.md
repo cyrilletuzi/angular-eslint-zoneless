@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.5.0 (2026-05-18)
+
+- feat: add `no-directive-accessor` rule (in recommended preset)
+
 ## 1.4.0 (2026-05-17)
 
 - feat: add `no-directive-writable-property` rule (in recommended preset)

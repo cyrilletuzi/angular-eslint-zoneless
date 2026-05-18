@@ -78,6 +78,7 @@ There are 3 presets available:
 | [no-ngzone-testing](./docs/rules/NO_NGZONE_TESTING.md) | ✅ | ✅ | ✅ |
 | [no-zonejs-testing-functions](./docs/rules/NO_ZONEJS_TESTING_FUNCTIONS.md) | ✅ | ✅ | ✅ |
 | [no-directive-writable-property](./docs/rules/NO_DIRECTIVE_WRITABLE_PROPERTY.md) | ❌ | ✅ | ✅ |
+| [no-directive-accessor](./docs/rules/NO_DIRECTIVE_ACCESSOR.md) | ❌ | ✅ | ✅ |
 | [no-eager-change-detection](./docs/rules/NO_EAGER_CHANGE_DETECTION.md) | ❌ | ✅ | ✅ |
 | [no-ngoninit](./docs/rules/NO_NGONINIT.md) | ❌ | ✅ | ✅ |
 | [no-ngdocheck](./docs/rules/NO_NGDOCHECK.md) | ❌ | ✅ | ✅ |
