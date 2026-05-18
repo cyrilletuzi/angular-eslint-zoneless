@@ -9,7 +9,7 @@ export const ruleDefinition: RuleDefinition = {
   meta: {
     type: "problem",
     messages: {
-      [messageId]: `Public and protected getters and setters of components and directives should be avoided, as in a zoneless application, their recomputation does not update the UI anymore.`,
+      [messageId]: `Public and protected getters and setters of components and directives should be avoided, as in a zoneless application, their recomputation does not update the UI anymore. Use \`computed()\` instead.`,
     },
     docs: {
       description: `Checks that public and protected accessors of components and directives are not used.`,

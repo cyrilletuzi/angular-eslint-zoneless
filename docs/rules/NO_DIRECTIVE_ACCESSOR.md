@@ -3,7 +3,7 @@
 Restrict the usage of public and protected getters and setters in components and directives.
 
 In components and directives, a public or protected getter or setter can be binded to the UI. And in a zoneless application, a recomputation of it will not update the UI anymore. So:
-- if it is indeed used in the UI, use `computed()`
+- if it is indeed used in the UI, use `computed()` instead
 - if it is only a property for the class itself, mark it as private (note: if you need to use it in tests, TypeScript allows `componentInstance['privateProperty']`)
 
 ## Documentation

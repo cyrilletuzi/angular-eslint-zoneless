@@ -9,7 +9,7 @@ export const ruleDefinition: RuleDefinition = {
   meta: {
     type: "problem",
     messages: {
-      [messageId]: `Public and protected properties of components and directives should be readonly, as in a zoneless application, mutating them will not update the UI anymore.`,
+      [messageId]: `Public and protected properties of components and directives should be readonly, as in a zoneless application, mutating them will not update the UI anymore. Use signals instead.`,
     },
     docs: {
       description: `Checks that public and protected properties of components and directives are readonly.`,
