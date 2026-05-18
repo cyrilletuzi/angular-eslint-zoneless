@@ -1,4 +1,4 @@
-# no-writable-directive-property
+# no-directive-writable-property
 
 Restrict the usage of writable public and protected properties in components and directives.
 
@@ -17,7 +17,7 @@ In components and directives, a public or protected property can be binded to th
 ```json
 {
   "rules": {
-    "angular-eslint-zoneless/no-writable-directive-property": "error"
+    "angular-eslint-zoneless/no-directive-writable-property": "error"
   }
 }
 ```
