@@ -1,6 +1,6 @@
 {
   "name": "angular-eslint-zoneless",
-  "version": "1.5.0",
+  "version": "1.5.1",
   "description": "Angular zoneless lint rules for ESLint",
   "keywords": [
     "angular",
