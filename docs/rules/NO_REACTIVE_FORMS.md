@@ -1,6 +1,6 @@
 # no-reactive-forms
 
-Restrict the usage of legacy reactive forms, as some parts of them are not reactive in a zoneless application.
+Restrict the usage of legacy reactive forms (`ReactiveFormsModule`, `FormBuilder`, `FormGroup`, `FormControl`, `FormArray`, `FormRecord` and all their variants), as some parts of them are not reactive in a zoneless application.
 
 Use signals `form()` instead.
 
