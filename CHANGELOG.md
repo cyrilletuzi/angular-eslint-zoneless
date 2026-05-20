@@ -1,8 +1,8 @@
 # Changelog
 
-## work in progress
+## 1.6.0 (2026-05-20)
 
-- feat: add `no-reactive-forms-module` rule
+- feat: add `no-reactive-forms` rule
 
 ## 1.5.0 (2026-05-18)
 

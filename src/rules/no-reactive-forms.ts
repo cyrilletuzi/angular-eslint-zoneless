@@ -2,8 +2,8 @@ import type { RuleDefinition } from "@eslint/core";
 import type { TSESTree } from "@typescript-eslint/utils";
 import { isImportIdentifier } from "../utils/is-import-identifier";
 
-export const ruleName = "no-reactive-forms-module";
-const messageId = "noReactiveFormsModule";
+export const ruleName = "no-reactive-forms";
+const messageId = "noReactiveForms";
 
 export const ruleDefinition: RuleDefinition = {
   meta: {
@@ -13,7 +13,7 @@ export const ruleDefinition: RuleDefinition = {
     },
     docs: {
       description: `Checks that \`ReactiveFormsModule\`, \`FormBuilder\`, \`FormControl\`, \`FormGroup\`, \`FormArray\`, \`FormRecord\` and all their variants are not used.`,
-      url: 'https://github.com/cyrilletuzi/angular-eslint-zoneless/blob/main/docs/rules/NO_REACTIVE_FORMS_MODULE.md',
+      url: 'https://github.com/cyrilletuzi/angular-eslint-zoneless/blob/main/docs/rules/NO_REACTIVE_FORMS.md',
     },
     schema: [],
   },

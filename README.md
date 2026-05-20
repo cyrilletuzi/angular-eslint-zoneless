@@ -96,6 +96,7 @@ There are 3 presets available:
 | [no-detectchanges-testing](./docs/rules/NO_DETECTCHANGES_TESTING.md) | ❌ | ✅ | ✅ |
 | [no-changedetectorref](./docs/rules/NO_CHANGEDETECTORREF.md) | ❌ | ❌ | ✅ |
 | [no-subscribe-in-component-constructor](./docs/rules/NO_SUBSCRIBE_IN_COMPONENT_CONSTRUCTOR.md) | ❌ | ❌ | ✅ |
+| [no-reactive-forms](./docs/rules/NO_REACTIVE_FORMS.md) | ❌ | ❌ | ❌ |
 
 > [!TIP]
 > I also published [other lint rules for the Angular injection context](https://github.com/cyrilletuzi/angular-eslint-injection-context).

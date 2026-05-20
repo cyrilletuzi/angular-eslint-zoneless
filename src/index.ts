@@ -19,7 +19,7 @@ import * as noNgzoneTesting from "./rules/no-ngzone-testing.js";
 import * as noNgzone from "./rules/no-ngzone.js";
 import * as noOutputDecorator from "./rules/no-output-decorator.js";
 import * as noProvidezonechangedetection from "./rules/no-providezonechangedetection.js";
-import * as noReactiveFormsModule from "./rules/no-reactive-forms-module.js";
+import * as noReactiveForms from "./rules/no-reactive-forms.js";
 import * as noSubscribeInComponentConstructor from "./rules/no-subscribe-in-component-constructor.js";
 import * as noViewDecorator from "./rules/no-view-decorator.js";
 import * as noZonejsImport from "./rules/no-zonejs-import.js";
@@ -67,7 +67,7 @@ const plugin = {
     [noZonejsTestingFunctions.ruleName]: noZonejsTestingFunctions.ruleDefinition,
     [noChangedetectorref.ruleName]: noChangedetectorref.ruleDefinition,
     [noSubscribeInComponentConstructor.ruleName]: noSubscribeInComponentConstructor.ruleDefinition,
-    [noReactiveFormsModule.ruleName]: noReactiveFormsModule.ruleDefinition,
+    [noReactiveForms.ruleName]: noReactiveForms.ruleDefinition,
   },
 } satisfies Plugin;
 

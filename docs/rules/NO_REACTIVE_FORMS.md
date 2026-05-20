@@ -1,4 +1,4 @@
-# no-reactive-forms-module
+# no-reactive-forms
 
 Restrict the usage of legacy reactive forms, as some parts of them are not reactive in a zoneless application.
 
@@ -14,7 +14,7 @@ Use signals `form()` instead.
 ```json
 {
   "rules": {
-    "angular-eslint-zoneless/no-reactive-forms-module": "error"
+    "angular-eslint-zoneless/no-reactive-forms": "error"
   }
 }
 ```
