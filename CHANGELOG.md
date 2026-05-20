@@ -1,5 +1,9 @@
 # Changelog
 
+## work in progress
+
+- feat: add `no-reactive-forms-module` rule
+
 ## 1.5.0 (2026-05-18)
 
 - feat: add `no-directive-accessor` rule (in recommended preset)
