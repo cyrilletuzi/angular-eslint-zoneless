@@ -11,6 +11,8 @@ Use signals `form()` instead.
 
 ## Configuration
 
+- in the recommended preset (see the [README](../../README.md) for the configuration)
+- or just this rule:
 ```json
 {
   "rules": {
@@ -18,9 +20,6 @@ Use signals `form()` instead.
   }
 }
 ```
-
-> [!NOTE]
-> This rule is not in a preset yet, as signals forms are not yet stable. They will be in Angular >=22, and when released, this rule will be added to the `recommended` preset.
 
 ## ❌ Invalid
 

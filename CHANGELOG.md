@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.7.0 (2026-06-04)
+
+- feat: add `no-reactive-forms` rule in `recommended` preset now that Angular 22 is stable
+
 ## 1.6.0 (2026-05-20)
 
 - feat: add `no-reactive-forms` rule

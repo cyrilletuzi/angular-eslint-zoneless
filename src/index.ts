@@ -106,6 +106,7 @@ const recommended: ConfigObject = {
     [`${name}/${noContentDecorator.ruleName}`]: "error",
     [`${name}/${noViewDecorator.ruleName}`]: "error",
     [`${name}/${noAsyncpipe.ruleName}`]: "error",
+    [`${name}/${noReactiveForms.ruleName}`]: "error",
     [`${name}/${noDetectchangesTesting.ruleName}`]: "error",
   },
 };

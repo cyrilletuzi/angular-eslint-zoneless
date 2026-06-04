@@ -93,10 +93,10 @@ There are 3 presets available:
 | [no-content-decorator](./docs/rules/NO_CONTENT_DECORATOR.md) | ❌ | ✅ | ✅ |
 | [no-view-decorator](./docs/rules/NO_VIEW_DECORATOR.md) | ❌ | ✅ | ✅ |
 | [no-asyncpipe](./docs/rules/NO_ASYNCPIPE.md) | ❌ | ✅ | ✅ |
+| [no-reactive-forms](./docs/rules/NO_REACTIVE_FORMS.md) | ❌ | ✅ | ✅ |
 | [no-detectchanges-testing](./docs/rules/NO_DETECTCHANGES_TESTING.md) | ❌ | ✅ | ✅ |
 | [no-changedetectorref](./docs/rules/NO_CHANGEDETECTORREF.md) | ❌ | ❌ | ✅ |
 | [no-subscribe-in-component-constructor](./docs/rules/NO_SUBSCRIBE_IN_COMPONENT_CONSTRUCTOR.md) | ❌ | ❌ | ✅ |
-| [no-reactive-forms](./docs/rules/NO_REACTIVE_FORMS.md) | ❌ | ❌ | ❌ |
 
 > [!TIP]
 > I also published [other lint rules for the Angular injection context](https://github.com/cyrilletuzi/angular-eslint-injection-context).
