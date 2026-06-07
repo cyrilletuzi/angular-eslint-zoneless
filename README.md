@@ -105,7 +105,7 @@ There are 3 presets available:
 
 > Why not in Angular ESLint?
 
-I proposed a [Pull Request](https://github.com/angular-eslint/angular-eslint/pull/2892) on another topic, but it has been ignored for months now. So I decided to publish rules by myself.
+I proposed a [Pull Request](https://github.com/angular-eslint/angular-eslint/pull/2892) on another topic, but it has been ignored for months, then rejected without a reason. So I decided to publish rules by myself.
 
 > Is Angular ESLint required?
 
