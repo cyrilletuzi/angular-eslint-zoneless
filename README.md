@@ -35,8 +35,6 @@ npm install angular-eslint-zoneless --save-dev
 
 2. ESLint flat configuration (`eslint.config.js` or equivalent)
 
-- in a new project or a project already fully migrated to signals:
-
 ```js
 const eslint = require("@eslint/js");
 const { defineConfig } = require("eslint/config");
@@ -53,27 +51,10 @@ module.exports = defineConfig({
   extends: [
     eslint.configs.recommended,
     tsEslint.configs.strictTypeChecked,
-    angularEslintZoneless.configs.recommended, // ⬅️ add this
+    tsEslint.configs.stylisticTypeChecked,
+    angularEslintZoneless.configs.recommended, // ⬅️ add this (or one of the other presets below)
   ],
   rules: {},
-});
-```
-
-- or in an existing project with signals migration ongoing:
-
-```js
-// ...
-module.exports = defineConfig({
-  // ...
-  extends: [
-    // ...
-    angularEslintZoneless.configs.minimal, // ⬅️ add this
-  ],
-  rules: {
-    // and add the other rules gradually (see the full list below)
-    "angular-eslint-zoneless/no-eager-change-detection": "error",
-    // ...
-  },
 });
 ```
 
@@ -88,6 +69,9 @@ There are 3 presets available:
 - `minimal`: restrict what really does not work without zone.js
 - `recommended`: `minimal` + enforce signals patterns
 - `strict`: `recommended` + go even further in signals patterns
+
+> [!TIP]
+> Use the `recommended` or `strict` presets for new projects and projects already fully migrated to zoneless and signals patterns. Use the `minimal` preset for projects with signals migration still ongoing, and enable the other rules gradually.
 
 | Rule & documentation | in minimal| in recommended | in strict |
 |---|---|---|---|
