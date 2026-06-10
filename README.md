@@ -11,7 +11,7 @@ ESLint rules for Angular zoneless.
 - no `@Input()` and other decorators, to enforce `input()` and other signal equivalents
 - no `ngOnInit()` and other component lifecycle methods, to enforce using signals and resources patterns
 
-A [blog post on Dev.to](https://dev.to/cyrilletuzi/angular-zoneless-lint-rules-enforce-signals-patterns-4fc) is planned to explain the context and the purpose of this tool in more details.
+A [blog post on Dev.to](https://dev.to/cyrilletuzi/angular-zoneless-lint-rules-enforce-signals-patterns-4fc) explains the context and the purpose of this tool in more details.
 
 > [!NOTE]
 > Find this tool useful? I’m open to freelance & full-time opportunities.
