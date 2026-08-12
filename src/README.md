@@ -1,14 +1,5 @@
 # angular-eslint-zoneless
 
-ESLint rules for Angular zoneless.
+This package is deprecated and replaced by [eslint-plugin-angular-modern](https://www.npmjs.com/package/eslint-plugin-angular-modern), which contains the same rules and more.
 
-**Checks that a zoneless application does not use zone.js-based features and that signals/resources patterns are used, for example:**
-- no zone.js import and provider
-- no zone.js testing functions like `fakeAsync()`
-- no public or protected writable properties in components
-- no `ChangeDectectionStrategy.Eager`
-- no `NgZone`
-- no `@Input()` and other decorators, to enforce `input()` and other signal equivalents
-- no `ngOnInit()` and other component lifecycle methods, to enforce using signals and resources patterns
-
-[The documentation is available on GitHub.](https://github.com/cyrilletuzi/angular-eslint-zoneless)
+A [migration guide](https://github.com/cyrilletuzi/eslint-plugin-angular-modern/blob/main/docs/MIGRATION.md) is available, it takes only a few minutes.

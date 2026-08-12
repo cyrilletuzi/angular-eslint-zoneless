@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.8.0 (2026-08-12)
+
+This package is deprecated and replaced by [eslint-plugin-angular-modern](https://github.com/cyrilletuzi/eslint-plugin-angular-modern), which contains the same rules and more.
+
+A [migration guide](https://github.com/cyrilletuzi/eslint-plugin-angular-modern/blob/main/docs/MIGRATION.md) is available, it takes only a few minutes.
+
 ## 1.7.0 (2026-06-04)
 
 - feat: add `no-reactive-forms` rule in `recommended` preset now that Angular 22 is stable
